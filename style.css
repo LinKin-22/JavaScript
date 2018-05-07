@@ -1,0 +1,31 @@
+*{
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+
+body{
+	font-family: times-new-roman;
+	font-size: 18px;
+	color: #444;
+	line-height: 25px;
+}
+
+.content{
+	background: #f0f0f0;
+	width: 1280px;
+	margin: 0 auto;
+}
+
+.maincontent{
+	background: #F5F2F2;
+	margin: 10px;
+	min-height: 500px;
+	padding: 5px 10px;
+}
+
+.header, .footer{
+	background: #5BE219;
+	text-align: center;
+	padding: 10px;
+ }

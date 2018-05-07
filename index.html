@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript Fundamentals</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<section class="content">
+		<div class="header">
+			<h2>
+				<script>
+					document.write("Tutorial: JavaScript Fundamentals");
+				</script>
+			</h2>
+		</div>
+
+		<div class="maincontent">
+			<div id="show"></div>
+			<script>
+				//innerHTML, document.write(), window.alert(), console.log();
+				var name1 = "Alva";
+				var name2 = " Styles";
+				var fullName = name1+name2;
+				document.getElementById("show").innerHTML = fullName;
+				//document.write(fullName);
+
+				//page alert
+				window.alert("Error occured!");
+				
+				//inspect into console
+				console.log(fullName);
+
+				/*Variable*/
+				
+				document.write(name1 + name2);
+				var result1=3.42, result2=3.12, result3=3.59;
+				var cgpa = (result3+result2+result1)/3.0;
+				document.write("<br>CGPA is: " + cgpa);
+
+				/*Function*/
+				var color = "green";
+
+				function func1(){
+					var color = "blue";
+					document.write("<br/><br/>Inside function color is: " + color);
+				}
+
+				func1();
+				document.write("<br/>");
+				document.write("Outside function color is: " + color);
+
+			</script>
+		</div>
+		
+		<div class="footer">
+			<h2>
+				<script>
+					document.write("Training with live project");
+				</script>
+			</h2>
+		</div>
+	</section>
+</body>
+
+</html>
