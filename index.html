@@ -1,68 +1,625 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        <title>Javascript - Tutorial</title>
+    </head>
+    <body>
+        <div id="myDiv">
+        </div>
+    </body>
+    <script type="module">
+        //in-line comment in javascript
+        console.log("Hello, Javascript!! ;)");
+        /*
+         This is a
+         MULTI-line
+         comment
+        */
+        var arr = [["rain", 23], "hello", 90];
+        arr.push(["You", "and I"]);
 
-<head>
-	<meta charset="utf-8">
-	<title>JavaScript Fundamentals</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
+        var name = "Pangasius";
+        //name = 8;
 
-<body>
-	<section class="content">
-		<div class="header">
-			<h2>
-				<script>
-					document.write("Tutorial: JavaScript Fundamentals");
-				</script>
-			</h2>
-		</div>
+        let channelName = "freeCodeCamp";
+        const pi = 3.14;
 
-		<div class="maincontent">
-			<div id="show"></div>
-			<script>
-				//innerHTML, document.write(), window.alert(), console.log();
-				var name1 = "Alva";
-				var name2 = " Styles";
-				var fullName = name1+name2;
-				document.getElementById("show").innerHTML = fullName;
-				//document.write(fullName);
+        var a = 3, b = 2, c = "I am a \"";
 
-				//page alert
-				window.alert("Error occured!");
-				
-				//inspect into console
-				console.log(fullName);
+        c += "javascript developer\"!";
 
-				/*Variable*/
-				
-				document.write(name1 + name2);
-				var result1=3.42, result2=3.12, result3=3.59;
-				var cgpa = (result3+result2+result1)/3.0;
-				document.write("<br>CGPA is: " + cgpa);
+        //Case sensetive
+        let C = "capital";
 
-				/*Function*/
-				var color = "green";
+        var quotient = 37/7;
 
-				function func1(){
-					var color = "blue";
-					document.write("<br/><br/>Inside function color is: " + color);
-				}
+        var facebook = '<a href="https://www.facebook.com" target="_blank">Home</a>';
 
-				func1();
-				document.write("<br/>");
-				document.write("Outside function color is: " + color);
+        let firstName = "Corolla";
+        firstName = "Mercedes Benz";
 
-			</script>
-		</div>
-		
-		<div class="footer">
-			<h2>
-				<script>
-					document.write("Training with live project");
-				</script>
-			</h2>
-		</div>
-	</section>
-</body>
+        var lastLetter = firstName[firstName.length - 1];
 
+        function wordBlanks(noun, adjective, verb, adverb){
+            var result = "";
+            result += "The " + adjective + " " + noun + " " + verb + " to the store " + adverb;
+
+            return result;
+        }
+
+        var Array = [1,34,5,6];
+        var myArr = ["I", 38, ["you", 20], "me"];
+
+        // remove first element from array
+        myArr.shift();
+        myArr.unshift(["caffeine", 603, 3.25]);
+
+        // remove last element from array
+        Array.pop();
+
+        var myGlobal = 10;
+        var outerWear = "T-shirt";
+
+        function func1(){
+            var oopsGlobal = 1;
+            outerWear = "Sweater";
+            return outerWear;
+        }
+
+        function func2(){
+            var output = "";
+            if(typeof myGlobal != "undefined"){
+                output += "myGlobal: " + myGlobal;
+            }
+
+            if(typeof oopsGlobal != "undefined"){
+                output += " OopsGlobal: " + oopsGlobal;
+            }
+
+            //console.log(output);
+        }
+
+        func1();
+        func2();
+
+        function nextInLine(brr, item){
+            brr.push(item);
+            return brr.shift();
+        }
+
+        let testArr = [1,2,3,4,5];
+
+        // console.log("Before: " + JSON.stringify(testArr));
+        // console.log(nextInLine(testArr, 6));
+        // console.log("After: " + JSON.stringify(testArr));
+
+        function welcomeToBooleans(a,b){
+            if(a%b==0) return true;
+            return false;
+        }
+
+        if(welcomeToBooleans(10,5)){
+            //console.log("Divisible.");
+        }
+
+        function compareEquality(a,b){
+            if(a === b) return "Equal."; /// strict equal
+            return "Not equal.";
+        }
+
+        function strictNotEqual(a,b){
+            if(a !== b) return "Not equal."; /// strict not equal
+            return "Equal.";
+        }
+
+        /// Objects
+        var ourDog = {
+            "name": "Camper",
+            "legs": 4,
+            "tails": 1,
+            "friends": ["everything!"]
+        };
+
+        // use a property of an object
+        var dogName = ourDog.name;
+        var dogFriend = ourDog["friends"];
+        
+        //Adding property
+        ourDog.bark = "Bow-wow";
+        ourDog["nationality"] = "Bangladeshi!!";
+
+        var dogBark = ourDog["bark"];
+
+        delete ourDog.bark;
+
+        function checkObject(checkProp){
+            if(ourDog.hasOwnProperty(checkProp)){
+                return ourDog[checkProp];
+            }
+            return "Not found!!";
+        }
+
+        var myMusic = {
+            "singer": {
+                "id1": {
+                    "artist": "David Bennington",
+                    "title": "Piano Man",
+                    "release_year": 1973,
+                    "formats": ["CD", "8T", "LP"],
+                    "gold": true
+                },
+                "1001": {
+                    "artist": "Beau carnes",
+                    "title": "Cereal Man",
+                    "release_year": 2003,
+                    "formats": ["Youtube video"]
+                }
+            }
+        };
+
+        var myPlants = [
+            {
+                type: "flowers",
+                list: ["rose", "tulip", "dandelion"]
+            },
+            {
+                type: "trees",
+                list: ["fir", "Ucaliptus", "birch"]
+            }
+        ];
+
+        var secondTree = myPlants[1].list[1];
+
+        var collection = {
+            "2548": {
+                "album": "Slippery when wet",
+                "artist": "Bon jovi",
+                "tracks": [
+                    "Let It Rock",
+                    "You Give Love a Bad Name"
+                ]
+            },
+            "2468": {
+                 "album": "1999",
+                 "artist": "Prince",
+                 "tracks": [
+                     "1999",
+                     "Little Red Covette"
+                 ]
+            },
+            "1245": {
+                "album": "Hunting Party",
+                "artist": "Linkin Park",
+                "tracks": []
+            },
+            "5439": {
+                "album": "ABBA Gold"
+            }
+        };
+
+        var collectionCopy = JSON.parse(JSON.stringify(collection));
+
+        function updateRecords(id, prop, value){
+            if(value === ""){
+                delete collection[id][prop];
+            }
+            else if(prop === "tracks"){
+                collection[id][prop] = collection[id][prop] || [];
+
+                collection[id][prop].push(value);
+            }
+            else{
+                collection[id][prop] = value;
+            }
+            return collection;
+        }
+
+        //console.log(checkObject("name"));
+        // updateRecords(2468, "tracks", "Delirious");
+        // console.log(updateRecords(5439, "artist", "ABBA"));
+
+        var test = [];
+        for(var i=0; i<10; i++){
+            test.push(i);
+        }
+
+        var sum=0;
+        var j=0;
+
+        while(j<test.length){
+            sum += test[j];
+            j++;
+        }
+
+        function multiplyAll(foo){
+            var p = 1;
+
+            for (let i = 0; i < foo.length; i++) {
+                for (let j = 0; j < foo[i].length; j++) {
+                    p *= foo[i][j];
+                }
+            }
+
+            return p;
+        }
+
+        var product = multiplyAll([[1,2], [3,4], [5, 6, 7]]);
+
+        var contacts = [
+            {
+                "firstName": "Akira",
+                "lastName": "Laine",
+                "number": "01838799378",
+                "likes": ["Pizza", "Coding", "Brownie Points"]
+            },
+            {
+                "firstName": "Harry",
+                "lastName": "Potter",
+                "number": "01973923223",
+                "likes": ["Hogwarts", "Magic", "Hagrid"]
+            },
+            {
+                "firstName": "Sherlock",
+                "lastName": "Homes",
+                "number": "01343786478",
+                "likes": ["Ingruing Cases", "Violin"]
+            },
+            {
+                "firstName": "Kristian",
+                "lastName": "Vos",
+                "number": "Unknown",
+                "likes": ["JavaScript", "Gaming", "Foxes"]
+            }
+        ];
+
+        function lookUpProfile(name, prop){
+            for (let i = 0; i < contacts.length; i++){
+                if(contacts[i].firstName == name){
+                    return contacts[i][prop] || "No such property";
+                }
+            }
+            return "No such contact!";
+        }
+
+        var randomNumber = Math.floor(Math.random() * 20);
+
+        function randomFraction(){
+            return Math.floor(Math.random() * 20);
+        }
+
+        function ourRandomRange(ourMax, ourMin){
+            return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+        }
+
+        function convertToInteger(str){
+            return parseInt(str);
+        }
+
+        function convertToIntegerWithRadix(str){
+            return parseInt(str, 2);
+        }
+
+        //console.log(lookUpProfile("Akira", "likes"));
+        //console.log(convertToInteger("77"));
+        //console.log(convertToIntegerWithRadix("1011"));
+
+        function checkScope(){
+            "use strict";
+            //let i = "function scope";
+            if(true){
+                let i = "block scope";
+                console.log("Block scope i is: " + i);
+            }
+            console.log("Function scope i is: " + i);
+        }
+
+        //checkScope();
+        function printManyTimes(str){
+            "use strict";
+
+            const SENTENCE = str + " is cool!";
+
+            for (let i = 0; i < str.length; i+=2) {
+                console.log(SENTENCE);
+            }
+        }
+
+        const s = [5,7,2];
+
+        function editInPlace(){
+            "use strict";
+
+            s[0] = 2;
+            s[1] = 5;
+            s[2] = 7;
+        }
+        editInPlace();
+
+        function freezeObj(){
+            "use strict";
+
+            const MATH_CONSTANTS = {
+                PI: 3.14
+            };
+
+            try{
+                MATH_CONSTANTS.PI = 99;
+            } catch(ex){
+                console.log(ex);
+            }
+
+            return MATH_CONSTANTS;
+        }
+
+        const PI = freezeObj();
+
+        // use arrow functions to write concise anonymous functions
+        const magic = () => new Date();
+
+        // write arrow functions with parameters
+        const myConcat = (arr1, arr2) => arr1.concat(arr2);
+
+        //console.log(myConcat([1,2], [3,4,5]));
+
+        // write higher order arrow functions
+        const realNumberArray = [4, 5.6, -9.7, 3.24, 42, 4, 8.23, -2];
+
+        const squareList = (arr) => {
+            const squaredIntegers = arr.filter(num => Number.isInteger(num) && num>0).map( x => x*x);
+
+            return squaredIntegers;
+        };
+
+        const squaredIntegers = squareList(realNumberArray);
+
+        //console.log(squaredIntegers);
+
+        const increment = (function(){
+            return function increment(number, value = 1){
+                return number + value;
+            }
+        })();
+
+        //console.log(increment(5,2));
+        //console.log(increment(5));
+
+        //Use the rest Operator with Function Parameters
+        const restSum = (function(){
+            return function Sum(...args){
+                return args.reduce((a, b) => a+b, 0);
+            }
+        })();
+
+        //console.log(restSum(1,2,3,4));
+
+        //use the spread operator to evaluate Arrays In-place
+        const months1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+
+        let months2;
+        (function(){
+            months2 = [...months1];
+            months1[0] = 'Grape';
+        })();
+
+        //console.log(months2);
+
+        //use destructuring Assignment to assign variables from objects
+
+        var voxel = {
+            x: 3.5,
+            y: 3.6,
+            z: 2.6
+        };
+
+        var a1 = voxel.x;
+        var b1 = voxel.y;
+        var c1 = voxel.z;
+
+        const {x: a2, y: b2, z: c2} = voxel;
+
+        const AVG_TEMPERATURES = {
+            today: 77.5,
+            tomorrow: 79
+        }
+
+        function getTempOfTomorrow(avgTemperatues) {
+            "use strict";
+
+            const {tomorrow: tempOfTomorrow} = avgTemperatues;
+
+            return tempOfTomorrow;
+        }
+
+        //console.log(getTempOfTomorrow(AVG_TEMPERATURES));
+
+        //Destructing assignment with Nested Objects
+
+        const LOCAL_FORECAST = {
+            today: {min: 72, max: 83},
+            tomorrow: {min: 73.3, max: 84.6}
+        };
+
+        function getMaxOfTomorrow(forecast){
+            "use strict";
+
+            const {tomorrow : {max : maxOfTomorrow}} = forecast;
+
+            return maxOfTomorrow;
+        }
+
+        //console.log(getMaxOfTomorrow(LOCAL_FORECAST));
+
+        //use destructing assignment to assign Variables from Arrays
+
+        const [z, x, , y] = [1,2,3,4,5,6];
+        //console.log(z,x,y);
+
+        let aa=8, bb=9;
+        (() => {
+            "use strict";
+            [aa,bb] = [bb,aa];
+        })();
+
+        //console.log(aa,bb);
+
+        // Use destructuring assignment with the Rest Operator
+
+        const source = [1,2,3,4,5,6,7,8,9,10];
+
+        function removeFirstTwo(list){
+            const [,, ...arr] = list;
+            return arr;
+        }
+
+        const dest = removeFirstTwo(source);
+        //console.log(dest);
+
+        //Use destructuring assignment to pass an object as a Function's parameter
+        
+        const stats = {
+            max: 56.44,
+            stansdard_deviation: 4.34,
+            median: 34.66,
+            mode: 12,
+            min: -0.35,
+            average: 35.56
+        };
+
+        const half = (function() {
+            return function half({max, min}) {
+                return (max + min)/2.0;
+            };
+        })();
+
+        //console.log(stats);
+        //console.log(half(stats));
+
+        //create strings using Template Literals
+        const person = {
+            name: "Eshan Stylin",
+            age: 56
+        };
+
+        const greeting = `Hello, my name is ${person.name}!
+        I am ${person.age} years old.`;
+
+        const result = {
+            success: ["max-length", "no-amd", "prefer-arrow-functions"],
+            failure: ["no-var", "var-on-top", "linebreak"],
+            skipped: ["id-blacklist", "no-dup-keys"]
+        };
+
+        function makeList(arr){
+            const resultDisplayArray = [];
+            for (let i = 0; i < arr.length; i++) {
+                resultDisplayArray.push(`<li class="text-warning">${arr[i]}</li>`)
+            }
+
+            return resultDisplayArray;
+        }
+
+        const resultDisplayArray = makeList(result.failure);
+
+        //console.log(resultDisplayArray);
+
+        //Write Concise Object Literal Declarations Using Simple Fields
+
+        const createPerson = (name, age, gender) => ({name, age, gender});
+        //console.log(createPerson("Aron Flynn", 12, "male"));
+
+        // Write Concise Declarative Functions
+        const bicyle = {
+            gear: 2,
+            setGear(newGear){
+                "use strict";
+                this.gear = newGear;
+            }
+        };
+
+        bicyle.setGear(5);
+        //console.log(bicyle.gear);
+
+        // Use class systax to define a constructor Function
+        class SpaceShuttle{
+            constructor(targetPlanet){
+                this.targetPlanet = targetPlanet;
+            }
+        }
+        
+        var zeus = new SpaceShuttle('Jupiter');
+        console.log(zeus.targetPlanet);
+
+        function makeVegClass(){
+            class Vegetable{
+                constructor(name){
+                    this.name = name;
+                }
+            }
+            return Vegetable;
+        }
+
+        const Vegetable = makeVegClass();
+        const carrot = new Vegetable('Capsicum');
+        //console.log(carrot.name);
+
+        //Use getters and setters to control to an object
+        class Book{
+            constructor(author){
+                this._author = author;
+            }
+
+            //getter
+            get writer(){
+                return this._author;
+            }
+
+            //setter
+            set writer(updatedAuthor){
+                this._author = updatedAuthor;
+            }
+        }
+
+        function makeClass(){
+            class Thermostat{
+                constructor(temp){
+                    this._temp = (5/9) * (temp-32);
+                }
+
+                get temperature(){
+                    return this._temp;
+                }
+
+                set temperature(updatedTemp){
+                    this._temp = updatedTemp;
+                }
+            }
+            return Thermostat;
+        }
+
+        const Thermostat = makeClass();
+        const thermos = new Thermostat(98);
+        let temp = thermos.temperature;
+        //console.log(temp);
+        thermos.temperature = 26;
+        temp = thermos.temperature;
+        //console.log(temp);
+        
+        import { Student } from './index.js';
+
+        window.onload = function () {
+            var x = new Student();
+            x.firstName = 'Taseen';
+            x.lastName = 'Tunaid';
+            x.course.id = 1;
+            x.course.name = 'Hyperledger Fabric';
+            document.getElementById('myDiv').innerHTML = x.firstName + ' ' + x.lastName + ' ' + x.course.id + '. ' + x.course.name;
+        }
+
+        // import * as capitalizedStrings from "capitalize_strings";
+
+        import subtract from './index.js';
+
+        console.log(subtract(7,9));
+
+
+    </script>
 </html>
