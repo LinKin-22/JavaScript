@@ -127,7 +127,7 @@ class BST {
     isBalanced() {
         return (this.findMinHeight() >= this.findMaxHeight() - 1);
     }
-    
+
     findMinHeight(node = this.root) {
         if(node === null) {
             return -1;
@@ -137,6 +137,21 @@ class BST {
         let right = this.findMinHeight(node.right);
 
         if(left < right) {
+            return left + 1;
+        } else {
+            return right + 1;
+        }
+    }
+    
+    findMaxHeight(node = this.root) {
+        if(node === null) {
+            return -1;
+        }
+
+        let left = this.findMaxHeight(node.left);
+        let right = this.findMaxHeight(node.right);
+
+        if(left > right) {
             return left + 1;
         } else {
             return right + 1;
