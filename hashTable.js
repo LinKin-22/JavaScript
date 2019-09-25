@@ -24,7 +24,7 @@ let HashTable = function() {
             ];
         } else {
             var inserted = false;
-            for (let i = 0; i < storage.length; i++) {
+            for (let i = 0; i < storage[index].length; i++) {
                 if(storage[index][i][0] === key) {
                     storage[index][i][1] = value;
                     inserted = true;
@@ -62,3 +62,15 @@ let HashTable = function() {
         }
     }
 }
+
+console.log(hash('quincy', 10));
+
+let ht = new HashTable();
+
+ht.add('beau', 'person');
+ht.add('fido', 'dog');
+ht.add('rex', 'dinosour');
+ht.add('tux', 'penguin');
+
+console.log(ht.lookup('tux'));
+ht.print();
