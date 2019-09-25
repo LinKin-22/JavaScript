@@ -7,3 +7,32 @@ var hash = (string, max) => {
     }
     return hash%max;
 }
+
+let HashTable = function() {
+    let storage = [];
+    const storageLimit = 4;
+
+    this.print = function() {
+        console.log(storage);
+    }
+
+    this.add = function(key, value) {
+        var index = hash(key, storageLimit);
+        if(storage[index] === undefined) {
+            storage[index] = [
+                [key, value]
+            ];
+        } else {
+            var inserted = false;
+            for (let i = 0; i < storage.length; i++) {
+                if(storage[index][i][0] === key) {
+                    storage[index][i][1] = value;
+                    inserted = true;
+                }
+            }
+            if(inserted === false) {
+                storage[index].push([key, value]);
+            }
+        }
+    }
+}
