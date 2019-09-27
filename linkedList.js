@@ -9,7 +9,7 @@ function LinkedList() {
         this.next = null;
     }
 
-    this.size = fucntion() {
+    this.size = function() {
         return length;
     }
 
@@ -124,3 +124,16 @@ function LinkedList() {
     }
 
 }
+
+var conga = new LinkedList();
+
+conga.add('Kitten');
+conga.add('Puppy');
+conga.add('Dog');
+conga.add('Cat');
+conga.add('Fish');
+console.log(conga.size());
+console.log(conga.removeAt(3));
+console.log(conga.size());
+console.log(elementAt(3));
+console.log(indexOf('Puppy'));
