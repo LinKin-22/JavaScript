@@ -28,4 +28,8 @@ let Trie = function() {
             return this.add(input.substr(1), node.keys.get(input[0]));
         }
     }
+
+    this.isWord = function() {
+        
+    }
 }
