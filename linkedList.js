@@ -100,4 +100,27 @@ function LinkedList() {
         length++;
     }
 
+    this.removeAt = function(index) {
+        var currentNode = head;
+        var previousNode;
+        var currentIndex = 0;
+
+        if(index < 0 || index >= length) {
+            return null;
+        }
+
+        if(index === 0) {
+            head = currentNode.next;
+        } else {
+            while(currentIndex < index) {
+                currentIndex++;
+                previousNode = currentNode;
+                currentNode = currentNode.next;
+            }
+            previousNode.next = currentNode.next;
+        }
+        length--;
+        return currentNode.element;
+    }
+
 }
