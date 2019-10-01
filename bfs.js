@@ -1,6 +1,6 @@
 /**Graphs: Breath First Search */
 
-function bfs(graph, cost) {
+function bfs(graph, root) {
 
     var nodesLen = {};
 
@@ -17,7 +17,8 @@ function bfs(graph, cost) {
         current = queue.shift();
 
         var curConnected = graph[current];
-        var neighborIdx = curConnected.indexOf(1);
+        var neighborIdx = [];
+        var idx = curConnected.indexOf(1);
 
         while(idx !== -1) {
             neighborIdx.push(idx);
@@ -33,3 +34,13 @@ function bfs(graph, cost) {
     }
     return nodesLen;
 }
+
+var exBFSGraph = [
+    [0,1,1,1,0],
+    [0,0,1,0,0],
+    [1,1,0,0,0],
+    [0,0,0,1,0],
+    [0,1,0,0,0]
+];
+
+console.log(bfs(exBFSGraph, 1));
